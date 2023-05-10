@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">android-joystick-controler-test</string>
+    <string name="app_name">KORA_REAL_CONTROLLER</string>
     <string name="front_lab">front</string>
     <string name="front_right_lab">front right</string>
     <string name="right_lab">right</string>

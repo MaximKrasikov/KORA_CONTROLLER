@@ -1,114 +1,75 @@
 package rimp.rild.com.android.android_joystick_controler_test;
 
-import android.support.v7.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.InputDevice;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import io.github.controlwear.virtual.joystick.android.JoystickView;
+
 public class MainActivity extends AppCompatActivity {
-    TextView mTextViewState;
-    TextView mTextViewAngle, mTextViewDistance, mTextViewDirection;
+    TextView mTextViewState, mTextViewAngle, mTextViewDistance, mTextViewDirection, mTextViewPower;
 
-    JoyStick2 js;
-    ImageView joystickSignal;
+    JoystickViewImpl joystickViewImpl;
 
-    JoyStickSurfaceView mJoyStick;
-
-    int testCount = 0;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_joystick_surfaceview_activity);
-        mTextViewState = (TextView) findViewById(R.id.text_view_state);
-        mTextViewAngle = (TextView) findViewById(R.id.textView3);
-        mTextViewDistance = (TextView) findViewById(R.id.textView4);
-        mTextViewDirection = (TextView) findViewById(R.id.textView5);
+        setContentView(R.layout.activity_joystick_view_activity);
 
-        mJoyStick = (JoyStickSurfaceView) findViewById(R.id.main_joystick);
+        mTextViewAngle = (TextView) findViewById(R.id.angleTextView);
+        mTextViewPower = (TextView) findViewById(R.id.powerTextView);
+        mTextViewDirection= (TextView) findViewById(R.id.directionTextView);
+        joystickViewImpl = (JoystickViewImpl) findViewById(R.id.main_joystick);
 
-        mJoyStick.setOnJoyStickMoveListener(new JoyStickSurfaceView.OnJoystickMoveListener() {
+
+        joystickViewImpl.setOnMoveListener(new JoystickView.OnMoveListener() {
             @Override
-            public void onValueChanged(float angle, float power, JoyStickSurfaceView.JoyStick state) {
-                // TODO Auto-generated method stub
-                mTextViewAngle.setText(" " + String.valueOf(angle) + "°");
-                mTextViewDistance.setText(" " + String.valueOf(power) + "%");
-                switch (state) {
-                    case MORE_UP:
-                    case UP:
-                        testCount++;
-                        mTextViewDirection.setText(
-                                getResources().getString(R.string.front_lab) + " C:" + testCount);
-                        break;
-                    case MORE_UPRIGHT:
-                    case UPRIGHT:
-                        mTextViewDirection.setText(
-                                getResources().getString(R.string.front_right_lab) + " C:" + testCount);
-                        break;
-                    case MORE_RIGHT:
-                    case RIGHT:
-                        testCount++;
-                        mTextViewDirection.setText(
-                                getResources().getString(R.string.right_lab) + " C:" + testCount);
-                        break;
-                    case MORE_DOWNRIGHT:
-                    case DOWNRIGHT:
-                        mTextViewDirection.setText(
-                                getResources().getString(R.string.right_bottom_lab) + " C:" + testCount);
-                        break;
-                    case MORE_DOWN:
-                    case DOWN:
-                        testCount++;
-                        mTextViewDirection.setText(
-                                getResources().getString(R.string.bottom_lab) + " C:" + testCount);
-                        break;
-                    case MORE_DOWNLEFT:
-                    case DOWNLEFT:
-                        mTextViewDirection.setText(
-                                getResources().getString(R.string.bottom_left_lab) + " C:" + testCount);
-                        break;
-                    case MORE_LEFT:
-                    case LEFT:
-                        testCount++;
-                        mTextViewDirection.setText(
-                                getResources().getString(R.string.left_lab) + " C:" + testCount);
-                        break;
-                    case MORE_UPLEFT:
-                    case UPLEFT:
-                        mTextViewDirection.setText(
-                                getResources().getString(R.string.left_front_lab) + " C:" + testCount);
-                        break;
-                    default:
-                        testCount = 0;
-                        mTextViewDirection.setText(
-                                getResources().getString(R.string.center_lab) + " C:" + testCount);
-                }
-            }
-        }, JoyStickSurfaceView.LOOP_INTERVAL_SLOW, JoyStickSurfaceView.LOOP_INTERVAL_FAST);
-
-        mJoyStick.setOnLongPushListener(new JoyStickSurfaceView.OnLongPushListener() {
-            @Override
-            public void onLongPush() {
-                Log.d("MainEvent", "long pushed");
-                mTextViewDirection.setText("Joy Stick Long Pushed!");
-            }
-        });
-
-        mJoyStick.setOnChangeStateListener(new JoyStickSurfaceView.OnChangeStateListener() {
-            @Override
-            public void onChangeState(JoyStickSurfaceView.JoyStick next,
-                                      JoyStickSurfaceView.JoyStick previous) {
-                if (testCount > 1) {
-                    if ((!JoyStickSurfaceView.JoyStick.
-                            isMore(next, previous)))
-                        if ((!JoyStickSurfaceView.JoyStick.
-                                isLess(next, previous)))
-                            testCount = 0;
-                }
-                mTextViewState.setText(String.valueOf(next));
+            public void onMove(int angle, int strength) {
+                mTextViewAngle.setText(angle+" angle");
+                mTextViewPower.setText(strength+ " strength");
             }
         });
     }
+
+    @SuppressLint("SetTextI18n")
+    public boolean onGenericMotionEvent(MotionEvent event){
+        if ((event.getSource() & InputDevice.SOURCE_CLASS_JOYSTICK) == 0)
+            return false;
+
+        float axisX = event.getAxisValue(MotionEvent.AXIS_X);
+        float axisY = event.getAxisValue(MotionEvent.AXIS_Y);
+
+        if (axisX > -JoystickViewImpl.SAFE_AREA_STICK && axisX <  JoystickViewImpl.SAFE_AREA_STICK) {
+            axisX = 0;
+        }
+        if (axisY > -JoystickViewImpl.SAFE_AREA_STICK && axisY <  JoystickViewImpl.SAFE_AREA_STICK) {
+            axisY = 0;
+        }
+        float angleRealJoystick = joystickViewImpl.getAngle(axisX, axisY);
+        int strengthRealJoystick =joystickViewImpl.getStrength(axisX,axisY);
+
+        //String angleRealJoystickString = String.format("angle : %.3f", angleRealJoystick);
+        String angleRealJoystickString = ""+Math.round(angleRealJoystick);
+        String strengthRealJoystickString = ""+Math.round(strengthRealJoystick);
+
+        mTextViewAngle.setText(angleRealJoystickString + "°");
+        mTextViewPower.setText(" " + strengthRealJoystickString + "%");
+
+       /* String x= String.format("axX : %.3f", axisX);
+        String y= String.format("axY : %.3f", -axisY);
+        mTextViewAngle.setText(x + "°");
+        mTextViewPower.setText( y +"%");*/
+
+        return true;
+    }
+
+
 }
