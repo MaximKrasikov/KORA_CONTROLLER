@@ -3,7 +3,7 @@ package rimp.rild.com.android.android_joystick_controler_test;
 import static android.view.MotionEvent.AXIS_X;
 import static android.view.MotionEvent.AXIS_Y;
 
-import static rimp.rild.com.android.android_joystick_controler_test.RealJoystickController.getGameControllerIds;
+import static rimp.rild.com.android.android_joystick_controler_test.util.RealJoystickController.getGameControllerIds;
 
 import android.content.Context;
 import android.os.Build;
@@ -15,10 +15,14 @@ import android.view.View;
 
 
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
+
+import rimp.rild.com.android.android_joystick_controler_test.entity.Dpad;
+import rimp.rild.com.android.android_joystick_controler_test.entity.Joystick;
 //Fragment
+
+//https://developer.android.com/develop/ui/views/touch-and-input/game-controllers/controller-input
 
 public class BluetoothJoystickControlsFragment extends View {
     Dpad mDpad = new Dpad();

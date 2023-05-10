@@ -1,4 +1,4 @@
-package rimp.rild.com.android.android_joystick_controler_test;
+package rimp.rild.com.android.android_joystick_controler_test.util;
 
 import android.view.InputDevice;
 

@@ -1,4 +1,4 @@
-package rimp.rild.com.android.android_joystick_controler_test;
+package rimp.rild.com.android.android_joystick_controler_test.entity;
 
 import android.view.InputDevice;
 import android.view.MotionEvent;
