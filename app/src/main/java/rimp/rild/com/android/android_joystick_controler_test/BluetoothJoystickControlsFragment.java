@@ -5,19 +5,41 @@ import static android.view.MotionEvent.AXIS_Y;
 
 import static rimp.rild.com.android.android_joystick_controler_test.RealJoystickController.getGameControllerIds;
 
+import android.content.Context;
 import android.os.Build;
+import android.util.AttributeSet;
 import android.view.InputDevice;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.View;
 
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
+//Fragment
 
-public class BluetoothJoystickControlsFragment extends Fragment {
+public class BluetoothJoystickControlsFragment extends View {
     Dpad mDpad = new Dpad();
     Joystick mJstick = new Joystick();
+
+    public BluetoothJoystickControlsFragment(Context context) {
+        super(context);
+    }
+
+    public BluetoothJoystickControlsFragment(Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    public BluetoothJoystickControlsFragment(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+    }
+
+    public BluetoothJoystickControlsFragment(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+    }
+
 
     private static float getCenteredAxis(MotionEvent event,
                                          InputDevice device, int axis, int historyPos) {
