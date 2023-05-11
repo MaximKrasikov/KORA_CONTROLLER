@@ -20,11 +20,12 @@ import java.util.ArrayList;
 
 import rimp.rild.com.android.android_joystick_controler_test.entity.Dpad;
 import rimp.rild.com.android.android_joystick_controler_test.entity.Joystick;
+
 //Fragment
 
 //https://developer.android.com/develop/ui/views/touch-and-input/game-controllers/controller-input
-
-public class BluetoothJoystickControlsFragment extends View {
+//https://github.com/taayers/BluetoothControllerTesting/blob/b1b157a703ea4acfc2f2ac934baeb2d749f4a02c/MainActivity.java
+public class BluetoothJoystickControlsFragment extends JoystickView {
     Dpad mDpad = new Dpad();
     Joystick mJstick = new Joystick();
 

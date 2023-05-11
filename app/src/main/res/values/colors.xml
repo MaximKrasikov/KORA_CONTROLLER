@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
     <color name="colorJoystickBg">#a9e14d</color>
+    <color name="colorIcTint">#ffffff</color>
+    <color name="colorBtnText">#fff</color>
+    <color name="colorBtnPressed">#96ffffff</color>
+    <color name="colorBtn">#96d500f9</color>
+    <color name="colorBtnSolid">#d500f9</color>
+    <color name="colorTest">#8f22ff00</color>
+    <color name="colorTransparent">#00000000</color>
 </resources>

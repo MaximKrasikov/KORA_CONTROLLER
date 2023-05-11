@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_ptz_buttons"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:visibility="gone"
+    tools:showIn="@layout/activity_video">
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:columnCount="3"
+        app:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ptz_device_control_up"
+            android:layout_width="@dimen/ic_button_width"
+            android:layout_height="@dimen/ic_button_height"
+            android:layout_margin="@dimen/button_margin"
+            android:background="@drawable/round_button"
+            app:tint="@color/colorIcTint"
+            app:srcCompat="@drawable/ic_up"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/ptz_device_control_left"
+            android:layout_width="@dimen/ic_button_width"
+            android:layout_height="@dimen/ic_button_height"
+            android:layout_margin="@dimen/button_margin"
+            android:background="@drawable/round_button"
+            app:tint="@color/colorIcTint"
+            app:srcCompat="@drawable/ic_left"
+            tools:ignore="ContentDescription" />
+
+
+        <ImageButton
+            android:id="@+id/ptz_device_control_right"
+            android:layout_width="@dimen/ic_button_width"
+            android:layout_height="@dimen/ic_button_height"
+            android:layout_margin="@dimen/button_margin"
+            android:background="@drawable/round_button"
+            app:tint="@color/colorIcTint"
+            app:srcCompat="@drawable/ic_right"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/ptz_device_control_down"
+            android:layout_width="@dimen/ic_button_width"
+            android:layout_height="@dimen/ic_button_height"
+            android:layout_margin="@dimen/button_margin"
+            android:background="@drawable/round_button"
+            app:tint="@color/colorIcTint"
+            app:srcCompat="@drawable/ic_down"
+            tools:ignore="ContentDescription" />
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:columnCount="8"
+        app:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ptz_device_home_position"
+            android:layout_width="@dimen/ic_button_width"
+            android:layout_height="@dimen/ic_button_height"
+            android:layout_margin="@dimen/button_margin"
+            android:background="@drawable/round_button"
+            android:text="@string/ptz_device_home_position"
+            android:textColor="@color/colorBtnText"
+            android:textSize="@dimen/button_text_size"
+            app:tint="@color/colorIcTint"
+            tools:ignore="ContentDescription" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ptz_device_p1_position"
+            android:layout_width="@dimen/ic_button_width"
+            android:layout_height="@dimen/ic_button_height"
+            android:layout_margin="@dimen/button_margin"
+            android:background="@drawable/round_button"
+            android:text="@string/ptz_device_p1_position_text"
+            android:textColor="@color/colorBtnText"
+            android:textSize="@dimen/button_text_size"
+            app:tint="@color/colorIcTint"
+            tools:ignore="ContentDescription" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ptz_device_p2_position"
+            android:layout_width="@dimen/ic_button_width"
+            android:layout_height="@dimen/ic_button_height"
+            android:layout_margin="@dimen/button_margin"
+            android:background="@drawable/round_button"
+            android:text="@string/ptz_device_p2_position_text"
+            android:textColor="@color/colorBtnText"
+            android:textSize="@dimen/button_text_size"
+            app:tint="@color/colorIcTint"
+            tools:ignore="ContentDescription" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ptz_device_p3_position"
+            android:layout_width="@dimen/ic_button_width"
+            android:layout_height="@dimen/ic_button_height"
+            android:layout_margin="@dimen/button_margin"
+            android:background="@drawable/round_button"
+            android:text="@string/ptz_device_p3_position_text"
+            android:textColor="@color/colorBtnText"
+            android:textSize="@dimen/button_text_size"
+            app:tint="@color/colorIcTint"
+            tools:ignore="ContentDescription" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ptz_device_p4_position"
+            android:layout_width="@dimen/ic_button_width"
+            android:layout_height="@dimen/ic_button_height"
+            android:layout_margin="@dimen/button_margin"
+            android:background="@drawable/round_button"
+            android:text="@string/ptz_device_p4_position_text"
+            android:textColor="@color/colorBtnText"
+            android:textSize="@dimen/button_text_size"
+            app:tint="@color/colorIcTint"
+            tools:ignore="ContentDescription" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ptz_device_p5_position"
+            android:layout_width="@dimen/ic_button_width"
+            android:layout_height="@dimen/ic_button_height"
+            android:layout_margin="@dimen/button_margin"
+            android:background="@drawable/round_button"
+            android:text="@string/ptz_device_p5_position_text"
+            android:textColor="@color/colorBtnText"
+            android:textSize="@dimen/button_text_size"
+            app:tint="@color/colorIcTint"
+            tools:ignore="ContentDescription" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ptz_device_p6_position"
+            android:layout_width="@dimen/ic_button_width"
+            android:layout_height="@dimen/ic_button_height"
+            android:layout_margin="@dimen/button_margin"
+            android:background="@drawable/round_button"
+            android:text="@string/ptz_device_p6_position_text"
+            android:textColor="@color/colorBtnText"
+            android:textSize="@dimen/button_text_size"
+            app:tint="@color/colorIcTint"
+            tools:ignore="ContentDescription" />
+    </GridLayout>
+</LinearLayout>
