@@ -53,7 +53,7 @@
         android:layout_below="@+id/linearLayout1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="29dp"
-        android:background="@drawable/joystick_base" >
+        android:background="@drawable/ic_4_arrow_glyph_png" >
         <ImageView
             android:id="@+id/signal_layer_up"
             android:layout_width="match_parent"

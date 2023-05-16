@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <ru.avpower.avpturelpro.ui.tod.GStreamerSurfaceView
+  <!--  <ru.avpower.avpturelpro.ui.tod.GStreamerSurfaceView
         android:id="@+id/surface_video"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,7 +31,7 @@
 
     <include layout="@layout/activity_video_layout_controls_bottom" />
 
-    <include layout="@layout/activity_video_layout_controls_left" />
+    <include layout="@layout/activity_video_layout_controls_left" />-->
 
     <ProgressBar
         android:id="@+id/mPB"
@@ -41,7 +41,7 @@
         android:layout_centerInParent="true"
         android:visibility="invisible" />
 
-    <TextView
+   <!-- <TextView
         android:id="@+id/mRecorderTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
         android:textColor="@android:color/white"
         android:textSize="17sp"
         android:visibility="invisible"
-        tools:ignore="RtlHardcoded" />
+        tools:ignore="RtlHardcoded" />-->
 
 
     <FrameLayout

@@ -12,6 +12,7 @@ import android.view.InputDevice;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import io.github.controlwear.virtual.joystick.android.JoystickView;
 
 
 import androidx.annotation.Nullable;
@@ -25,7 +26,7 @@ import rimp.rild.com.android.android_joystick_controler_test.entity.Joystick;
 
 //https://developer.android.com/develop/ui/views/touch-and-input/game-controllers/controller-input
 //https://github.com/taayers/BluetoothControllerTesting/blob/b1b157a703ea4acfc2f2ac934baeb2d749f4a02c/MainActivity.java
-public class BluetoothJoystickControlsFragment extends JoystickView {
+public class BluetoothJoystickControlsFragment extends View {
     Dpad mDpad = new Dpad();
     Joystick mJstick = new Joystick();
 
@@ -40,7 +41,6 @@ public class BluetoothJoystickControlsFragment extends JoystickView {
     public BluetoothJoystickControlsFragment(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
-
     public BluetoothJoystickControlsFragment(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }

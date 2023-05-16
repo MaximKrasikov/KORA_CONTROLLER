@@ -9,4 +9,13 @@
     <string name="left_lab">left</string>
     <string name="left_front_lab">fron left</string>
     <string name="center_lab">center</string>
+    <string name="ptz_device_home_position_set_text">Home Позиция Установлена</string>
+    <string name="ptz_device_home_position" translatable="false">PH</string>
+    <string name="ptz_device_p1_position_text" translatable="false">P1</string>
+    <string name="ptz_device_p2_position_text" translatable="false">P2</string>
+    <string name="ptz_device_p3_position_text" translatable="false">P3</string>
+    <string name="ptz_device_p4_position_text" translatable="false">P4</string>
+    <string name="ptz_device_p5_position_text" translatable="false">P5</string>
+    <string name="ptz_device_p6_position_text" translatable="false">P6</string>
+    <string name="ptz_device_p7_position_text" translatable="false">P7</string>
 </resources>

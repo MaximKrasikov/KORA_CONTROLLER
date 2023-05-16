@@ -12,9 +12,7 @@
 
     <GridLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:columnCount="3"
-        app:orientation="horizontal">
+        android:layout_height="wrap_content">
 
         <ImageButton
             android:id="@+id/ptz_device_control_up"
@@ -60,9 +58,7 @@
 
     <GridLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:columnCount="8"
-        app:orientation="horizontal">
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ptz_device_home_position"
